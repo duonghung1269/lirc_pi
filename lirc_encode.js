@@ -132,9 +132,9 @@ function getSecondPartBinaryString(states) {
 }
 
 /*
- * Update states and return new states array
+ * Generate states from parameters
  */
-function updateStates(isOpen = true, mode = 'cool', temperature = 22, fan = 'fan1', swing = 'on', isPowerful = false) {
+function generateStates(isOpen = true, mode = 'cool', temperature = 22, fan = 'fan1', swing = 'on', isPowerful = false) {
   // make a copy of default option
   const options = DEFAULT_STATES.slice(0);
 

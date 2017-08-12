@@ -24,6 +24,7 @@
     "nodemon": "^1.11.0"
   },
   "dependencies": {
+    "argparse": "^1.0.9",
     "express": "^4.15.4"
   }
 }
