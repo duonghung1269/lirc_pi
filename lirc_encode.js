@@ -122,12 +122,12 @@ function convertToBinaryArray(states) {
 }
 
 function getFirstPartBinaryString(states) {
-  var arr = getBinaryArray(states).slice(0, 8);
+  var arr = convertToBinaryArray(states).slice(0, 8);
   return convertToBinaryArray(arr).join('');
 }
 
 function getSecondPartBinaryString(states) {
-  var arr = getBinaryArray(states).slice(8, states.length);
+  var arr = convertToBinaryArray(states).slice(8, states.length);
   return convertToBinaryArray(arr).join('');
 }
 
@@ -201,7 +201,7 @@ function hexToBinary(hexValue) {
 }
 
 module.exports = {
-  updateStates,
+  generateStates,
   printBinary,
   convertToBinaryArray,
   getFirstPartBinaryString,

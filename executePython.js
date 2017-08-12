@@ -4,7 +4,7 @@
 const myPythonScript = "irsender.py";
 // Provide the path of the python executable, if python is available as environment variable then you can use only "python"
 const pythonExecutable = "python";
-const lirc_encode = require('lirc-encode');
+const lirc_encode = require('./lirc_encode');
 const spawn = require('child_process').spawn;
 
 // Function to convert an Uint8Array to a string
