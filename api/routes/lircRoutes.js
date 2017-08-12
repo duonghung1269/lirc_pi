@@ -9,3 +9,4 @@ module.exports = function(app) {
 
   app.route('/remote/powerOff')
 	.post(lircPi.powerOff);
+}

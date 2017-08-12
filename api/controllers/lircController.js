@@ -10,3 +10,10 @@ exports.powerOn = function(req, res) {
   executePython.execute(airConModel);
   res.json(new ResponseModel("", "Powered on aircon successfully!", ""));
 };
+
+exports.powerOff = function(req, res) {
+  console.log('Reached powerOff endpoint ' + req.body);
+  var airConModel = new JSON.parse(req.body);
+  executePython.execute(airConModel);
+  res.json(new ResponseModel("", "Powered on aircon successfully!", ""));
+};
