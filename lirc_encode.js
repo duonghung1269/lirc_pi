@@ -184,6 +184,10 @@ function getMode(states) {
   return console.log(hexToBinary(states[13] >> 4));
 }
 
+function getTemperature(states) {
+  return console.log(hexToBinary(states[14]));
+}
+
 function getFan(states) {
   return console.log(hexToBinary(states[16] >> 4));
 }
@@ -205,5 +209,11 @@ module.exports = {
   printBinary,
   convertToBinaryArray,
   getFirstPartBinaryString,
-  getSecondPartBinaryString
+  getSecondPartBinaryString,
+  getState,
+  getMode,
+  getTemperature,
+  getFan,
+  getSwing,
+  getPowerful,
 };

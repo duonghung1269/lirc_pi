@@ -120,6 +120,9 @@ if __name__ == "__main__":
   FIRST_PART = args.checksum
   SECOND_PART = args.command
 
+  print("First part: {}".format(FIRST_PART))
+  print("Second part: {}".format(SECOND_PART))
+
   # pigpio
   pi = pigpio.pi()
   tx = TX(pi, OUT_PUT_PIN, DUTY_CYCLE, FREQUENCY)
