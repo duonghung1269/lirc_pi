@@ -122,13 +122,13 @@ function convertToBinaryArray(states) {
 }
 
 function getFirstPartBinaryString(states) {
-  var arr = convertToBinaryArray(states).slice(0, 8);
-  return convertToBinaryArray(arr).join('');
+  var arr = convertToBinaryArray(states.slice(0, 8));
+  return arr.join('');
 }
 
 function getSecondPartBinaryString(states) {
-  var arr = convertToBinaryArray(states).slice(8, states.length);
-  return convertToBinaryArray(arr).join('');
+  var arr = convertToBinaryArray(states.slice(8, states.length));
+  return arr.join('');
 }
 
 /*
