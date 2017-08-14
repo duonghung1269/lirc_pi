@@ -13,7 +13,7 @@ function uint8arrayToString(data){
 };
 
 function execute(airConModel) {
-	var states = lirc_encode.generateStates(airConModel.state, airConModel.mode, airConModel.temperature, 
+	var states = lirc_encode.generateStates(airConModel.powerState, airConModel.mode, airConModel.temperature, 
 								airConModel.fan, airConModel.swing, airConModel.powerful);
 	var firstPart = lirc_encode.getFirstPartBinaryString(states);
 	var secondPart = lirc_encode.getSecondPartBinaryString(states);

@@ -1,7 +1,7 @@
 'use strict';
 
-function AirCon(state, mode, temperature, fan, swing, powerful) {
-	this.state = state;
+function AirCon(powerState, mode, temperature, fan, swing, powerful) {
+	this.powerState = state;
 	this.mode = mode;
 	this.temperature = temperature;
 	this.fan = fan;

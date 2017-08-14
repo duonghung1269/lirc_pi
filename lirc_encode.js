@@ -134,12 +134,12 @@ function getSecondPartBinaryString(states) {
 /*
  * Generate states from parameters
  */
-function generateStates(isOpen = true, mode = 'cool', temperature = 22, fan = 'fan1', swing = 'on', isPowerful = false) {
+function generateStates(powerState = 'on', mode = 'cool', temperature = 22, fan = 'fan1', swing = 'on', powerful = 'off') {
   // make a copy of default option
   const options = DEFAULT_STATES.slice(0);
 
   // set state on/off (change value of last bit, bit 0 on the right)
-  if (isOpen) {
+  if (powerState == 'on') {
     options[13] |= 0x01; // bitwise or operator => 0010 0111 | 0000 0001 => 0010 0111
   } else {
     options[13] &= 0xFE; // bitwise and operator => 0010 0111 & 1111 1110 => 0010 0110
@@ -159,7 +159,7 @@ function generateStates(isOpen = true, mode = 'cool', temperature = 22, fan = 'f
   options[16] |= SWINGS[swing];
 
   // set powerful
-  if (isPowerful) {
+  if (powerful == 'on') {
     options[21] |= 0x01;
   } else {
     options[21] &= 0xFE;
