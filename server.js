@@ -2,7 +2,8 @@ var express = require('express'),
   app = express(),
   port = process.env.PORT || 3000,
   bodyParser = require('body-parser'),
-  routes = require('./api/routes/lircRoutes');
+  routes = require('./api/routes/lircRoutes'),
+  firebaseHandler = require('./api/firebase/firebaseEventHandler')
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -11,6 +12,8 @@ app.use(bodyParser.json());
 //});
 
 routes(app);
+
+firebaseHandler.startListenEvent();
 
 app.listen(port);
 
