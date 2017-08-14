@@ -1,9 +1,10 @@
 'use strict';
 
 // Import Admin SDK
-var admin = require("firebase-admin");
+const admin = require("firebase-admin");
+const executePython = require('../../executePython');
 
-var serviceAccount = require("./daikin-lirc-pi-firebase-adminsdk.json");
+const serviceAccount = require("./daikin-lirc-pi-firebase-adminsdk.json");
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
@@ -11,8 +12,8 @@ admin.initializeApp({
 });
 
 // Get a database reference to our posts
-var db = admin.database();
-var ref = db.ref("history_events");
+const db = admin.database();
+const ref = db.ref("history_events");
 
 console.log("init firebase...");
 
@@ -30,6 +31,8 @@ function startListenEvent() {
   		console.log("Fan: " + newEvent.fan);
   		//console.log("Title: " + newPost.title);
   		//console.log("Previous Post ID: " + prevChildKey);
+  		var airConModel = newEvent;
+  		executePython.execute(airConModel);
 	});
 }
 
