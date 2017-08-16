@@ -27,25 +27,16 @@ function startListenEvent() {
 
 	// Get the data on a post that has changed
 	db.ref("lastEvent").on("child_changed", function(snapshot) {
-  		var airConModel = snapshot.val();
-		var xx = snapshot.ref.parent;
+		console.log('============= On remote child_changed==========');
+  		var valueChanged = snapshot.val();
+		var keyChanged = snapshot.val();
+		console.log(`${keyChanged}: ${valueChanged}`)
 		db.ref("lastEvent").once("value", function(snapshot1) {
-	           console.log(snapshot1.val());
-		   executePython.execute(snapshot1.val());
+	           	console.log(snapshot1.val());
+		   		executePython.execute(snapshot1.val());
 	        }, function (errorObject) {
 	        	console.log("The read failed: " + errorObject.code);
-        	 });		
-
-		console.log(snapshot.ref.parent.key);
-		console.log(snapshot.ref.parent.val);
-		console.log(snapshot.ref.parent.fan);
-		//console.log(snapshot.ref.parent.val());
-		//console.log(snapshot.ref.parent.);
-		//console.log(snapshot.ref.parent.parent.child("lastEvent").val());
-		//console.log(xx);
-		console.log('============= On remote child_changed==========');
-		console.log(airConModel);
-		//executePython.execute(xx);		
+        	});				
 	});
 
 	// TODO: This event will load even just start npm, so need to check by timestamp for new added Event after start only
