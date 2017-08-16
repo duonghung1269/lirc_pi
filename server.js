@@ -13,8 +13,8 @@ app.use(bodyParser.json());
 
 routes(app);
 
-// firebaseHandler.startListenEvent();
-firebaseHandler.listenValueChanged();
+firebaseHandler.startListenEvent();
+//firebaseHandler.listenValueChanged();
 
 app.listen(port);
 

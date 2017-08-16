@@ -27,6 +27,7 @@
     "argparse": "^1.0.9",
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
-    "firebase-admin": "^5.1.0"
+    "firebase-admin": "^5.1.0",
+    "firebase-functions": "^0.6.1"
   }
 }
