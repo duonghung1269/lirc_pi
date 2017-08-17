@@ -1,6 +1,7 @@
 'use strict';
 
 // Import Admin SDK
+const config = require("../../config.json")[process.env.NODE_DEV || 'dev'];
 const admin = require("firebase-admin");
 const executePython = require('../../executePython');
 
@@ -8,7 +9,7 @@ const serviceAccount = require("./daikin-lirc-pi-firebase-adminsdk.json");
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: process.env.DATABASE_URL
+  databaseURL: config.database 
 });
 
 // Get a database reference to our posts

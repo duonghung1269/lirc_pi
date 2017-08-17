@@ -1,3 +1,4 @@
 node_modules/
 node_modules/*
 api/firebase/daikin-lirc-pi-firebase-adminsdk.json
+npm-debug.log
