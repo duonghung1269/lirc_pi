@@ -33,8 +33,17 @@ function startListenEvent() {
 		var keyChanged = snapshot.val();
 		console.log(`${keyChanged}: ${valueChanged}`)
 		db.ref("lastEvent").once("value", function(snapshot1) {
-	           	console.log(snapshot1.val());
-		   		executePython.execute(snapshot1.val());
+
+				// execute remote aircon
+				var daikinModel = snapshot1.val();
+	           	console.log(daikinModel);
+		   		executePython.execute(daikinModel);
+
+		   		// store daikin to history_events
+		   		var date = new Date();
+				var timestamp = date.getTime();
+	   			db.ref('history_events/' + timestamp).set(daikinModel);
+
 	        }, function (errorObject) {
 	        	console.log("The read failed: " + errorObject.code);
         	});				
